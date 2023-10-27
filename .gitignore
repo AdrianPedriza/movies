@@ -3,4 +3,4 @@ catalog/node_modules
 bin
 rent/.idea
 rent/target
-frontend
+externalfrontend
