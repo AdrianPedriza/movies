@@ -1,10 +1,10 @@
 icon: https://apps.okteto.com/movies/icon.png
 
 build:
-  frontend:
-    context: frontend
-  frontend-dev:
-    context: frontend
+  externalfrontend:
+    context: externalfrontend
+  externalfrontend-dev:
+    context: externalfrontend
     target: dev
   catalog:
     context: catalog
