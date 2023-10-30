@@ -6,20 +6,20 @@ build:
   externalfrontend-dev:
     context: externalfrontend
     target: dev
-  # catalog:
-  #   context: catalog
-  # rent:
-  #   context: rent
-  # api:
-  #   context: api
-  # api-dev:
-  #   context: api
-  #   target: dev
-  # worker:
-  #   context: worker
-  # worker-dev:
-  #   context: worker
-  #   target: dev
+  catalog:
+    context: catalog
+  rent:
+    context: rent
+  api:
+    context: api
+  api-dev:
+    context: api
+    target: dev
+  worker:
+    context: worker
+  worker-dev:
+    context: worker
+    target: dev
 
 deploy:
   - name: Deploy PostgreSQL
