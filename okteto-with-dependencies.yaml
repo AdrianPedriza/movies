@@ -16,10 +16,6 @@ build:
     context: worker
     target: dev
 
-dependencies:
-  repository: https://github.com/AdrianPedriza/externalfrontend
-  branch: main
-
 deploy:
   - name: Deploy PostgreSQL
     command: helm upgrade --install postgresql postgresql/postgresql-11.6.21.tgz -f postgresql/values.yml --version 11.6.21
