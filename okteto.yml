@@ -6,20 +6,20 @@ build:
   externalfrontend-dev:
     context: externalfrontend
     target: dev
-  catalog:
-    context: catalog
-  rent:
-    context: rent
-  api:
-    context: api
-  api-dev:
-    context: api
-    target: dev
-  worker:
-    context: worker
-  worker-dev:
-    context: worker
-    target: dev
+  # catalog:
+  #   context: catalog
+  # rent:
+  #   context: rent
+  # api:
+  #   context: api
+  # api-dev:
+  #   context: api
+  #   target: dev
+  # worker:
+  #   context: worker
+  # worker-dev:
+  #   context: worker
+  #   target: dev
 
 deploy:
   - name: Deploy PostgreSQL
@@ -31,7 +31,7 @@ deploy:
   - name: Echo Frontend
     command: echo ${OKTETO_BUILD_EXTERNALFRONTEND_IMAGE}
   - name: Deploy Frontend
-    command: helm upgrade --install frontend externalfrontend/chart --set image=${OKTETO_BUILD_EXTERNALFRONTEND_IMAGE}
+    command: helm upgrade --install frontend externalfrontend/chart --set image=okteto.dev/movies-externalfrontend:okteto
   - name: Deploy Catalog
     command: helm upgrade --install catalog catalog/chart --set image=${OKTETO_BUILD_CATALOG_IMAGE}
   - name: Deploy Rent
