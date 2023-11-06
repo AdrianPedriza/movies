@@ -30,7 +30,9 @@ deploy:
     command:  helm upgrade --install mongodb mongodb/mongodb-12.1.30.tgz -f mongodb/values.yml --version 12.1.30
   - name: Deploy Catalog
     command: helm upgrade --install catalog catalog/chart --set image=${OKTETO_BUILD_CATALOG_IMAGE}
-  - name: Deploy Frontend
+  - name: print front
+    command: echo ${OKTETO_BUILD_EXTERNALFRONTEND_IMAGE}
+  - name: Deploy Frontend 
     command: helm upgrade --install externalfrontend externalfrontend/chart --set image=${OKTETO_BUILD_EXTERNALFRONTEND_IMAGE}
   - name: Deploy Rent
     command: helm upgrade --install rent rent/chart --set image=${OKTETO_BUILD_RENT_IMAGE}
